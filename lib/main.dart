@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tiktok/constants/gaps.dart';
+import 'package:tiktok/constants/sizes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +19,18 @@ class MyApp extends StatelessWidget {
           0xFFe9435A,
         ),
       ),
-      home: Container(),
+      home: Padding(
+        padding: const EdgeInsets.all(Sizes.size14),
+        child: Container(
+          child: Row(
+            children: const [
+              Text('Hello'),
+              Gaps.h20,
+              Text('Hello'),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
