@@ -7,7 +7,7 @@ import 'package:tiktok/features/authentication/widgets/auth_button.dart';
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
-  void onSignUpTap(BuildContext context) {
+  void _onSignUpTap(BuildContext context) {
     Navigator.of(context).pop();
   }
 
@@ -20,17 +20,17 @@ class LoginScreen extends StatelessWidget {
             horizontal: Sizes.size40,
           ),
           child: Column(
-            children: const [
+            children: [
               Gaps.v80,
-              Text(
-                'Logi in to TikTok',
+              const Text(
+                'Login in to TikTok',
                 style: TextStyle(
                   fontSize: Sizes.size24,
                   fontWeight: FontWeight.w700,
                 ),
               ),
               Gaps.v20,
-              Text(
+              const Text(
                 'Manage your account, check notifications, comment on videos, and more.',
                 style: TextStyle(
                   fontSize: Sizes.size16,
@@ -40,14 +40,16 @@ class LoginScreen extends StatelessWidget {
               ),
               Gaps.v40,
               AuthButton(
-                icon: FaIcon(
+                onTap: (context) {},
+                icon: const FaIcon(
                   FontAwesomeIcons.user,
                 ),
                 text: 'Use email & password',
               ),
               Gaps.v16,
               AuthButton(
-                icon: FaIcon(
+                onTap: (context) {},
+                icon: const FaIcon(
                   FontAwesomeIcons.apple,
                 ),
                 text: 'Continue with Apple',
@@ -57,7 +59,7 @@ class LoginScreen extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.grey.shade100,
+        color: Colors.grey.shade50,
         elevation: 2,
         child: Padding(
           padding: const EdgeInsets.symmetric(
@@ -71,7 +73,7 @@ class LoginScreen extends StatelessWidget {
               ),
               Gaps.h5,
               GestureDetector(
-                onTap: (() => onSignUpTap(context)),
+                onTap: (() => _onSignUpTap(context)),
                 child: Text(
                   'Sign up',
                   style: TextStyle(
